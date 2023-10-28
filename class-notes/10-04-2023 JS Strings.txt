@@ -1,0 +1,21 @@
+//creating a variable th
+
+//length property string.length-1
+
+retrieving the cahracters from a string
+1. property acces
+string[index] => return the character or undefined
+it returns a string if the giving index is valid. otherwise it returns undefined
+
+2. str.charAt()
+returns a string if index is valid, otherwise returns an empty string, whete=her it is always string data type
+
+3. str.charCodeAt() => return code of ASCII decimal representation of the character
+It returns a number data type
+
+//change a cases
+str.toUpperCase()
+str.toLowerCase()
+
+
+trimming 
