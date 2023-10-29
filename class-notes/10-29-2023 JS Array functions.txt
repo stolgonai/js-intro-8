@@ -1,0 +1,40 @@
+Array Methods
+
+-Array is a widely used data structure in any programming language.
+-Data Structure: general term used for storing data in different data structures.
+
+Mutable or modifying original arrays methods: 
+
+1. PUSH adding element at the end. Also you can add multipple elmts at the end by coma.
+Push return a new lenght of the arr
+
+2. POP removing the last element and return that element.
+
+3. SHIFT removes the first elem from the beginning and return that element
+
+4. UNSHIFT accept an arg, and add an el at the beginning of arr, and return a new length of arr
+
+
+SEARCHING ELEMENTS
+5. Includes(arg) ==> check if an element exist or not, and return bolean answer, it takes 1 argument
+    it does not change anything in original arr.
+
+6. indexof(arg) --> check if the elemnts occur, and return index of first occurance of searching el. if el not found it returns -1
+    it does not change anything in original arr.
+
+7. lastIndexOf(arg) --> check if the elemnts occur, and return index of last occurance of searching el. if el not found it returns -1
+    it does not change anything in original arr.
+
+8. concat(arg) --> concat multiple arrays into one, it creates and returns a new array.
+This method did not change an original arr
+
+9. (...) --> spread a few arr into a new arr
+returns a newr arr, did not change the original one
+
+10. reverse() --> reversing elemnts inside original arr, does not accept arg, and it is changing/modifying an original arr, return modifyed arr. 
+
+11. Slice() --> accept arguments as a start and ending indexes, and do not modify arr, return cutted elem, as an arr
+
+12. splice(start position, how many removing, whats to include)it returns removed elements as an array. If there is no elements removed, then it returns an empty arr.
+    it changes the original array.
+13. 
