@@ -1,0 +1,15 @@
+While loop
+
+- While loop takes only condition as an arg
+- and starting point is global, not in the code scope.
+- and update point is inside of code block
+
+
+let i = 1
+while(cond){
+    //code block
+    //update
+}
+
+DO While
+- This is same exept it runs the code block first, then checks the condition.

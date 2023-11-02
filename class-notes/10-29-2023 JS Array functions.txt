@@ -37,4 +37,4 @@ returns a newr arr, did not change the original one
 
 12. splice(start position, how many removing, whats to include)it returns removed elements as an array. If there is no elements removed, then it returns an empty arr.
     it changes the original array.
-13. 
+

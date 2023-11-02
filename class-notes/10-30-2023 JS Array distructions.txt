@@ -1,0 +1,43 @@
+
+Distructuring
+
+-typeof operator for arrays returns OBJEct
+check with Array.isArray
+
+13. Array.isArray(arr) returns bolean answer, accept array as an argument, does not change an original arr.
+
+14. SORT methods
+- used to sort arr elements
+    -Strings sorts alphabeticaly a-z
+   - Numbers sorts alphabetically 1,11,123,234 and etc
+-  It does not take any args, when you sorting strings, bit it may take args when you sort Numbers
+- returns a new array
+- it is Modifies the original arr
+
+SORTING NUMBERS WITH THE COMPARISON CALLBACK FUNCTION
+
+callback function is a function, which pass as an arg another function
+
+const numbers = [1, 2, 5, 100, 21];
+numbers.sort((x, y) => x - y);
+console.log(numbers);
+
+15. FLAT()
+- reduces dimmension of the nested arrays with their elements.
+- does not accept as an arg anything or in the more nested we can use 
+-returns a new array
+- did not change the original one
+
+16. toString()
+- convert arr to strings
+-returns a new data as a strings
+-does not change an arr
+
+17. join()
+- convert arr to strings
+-it may accept a separator as an arg as a str
+-returns a new data as a strings
+-does not change an original arr
+
+18. Destructuring:
+Dedtructuring llows us to extract values from arrays, obj or other iterable data structures and assign them to the another variable

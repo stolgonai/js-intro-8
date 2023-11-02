@@ -1,0 +1,23 @@
+Loops Intro
+
+Loops: used for repeated code in a block and make our code more readable overal.
+- Loops execute untill a termination condition is met.
+
+-Infinite is never stops. because logical mistake, break point is never met.
+
+Iteration: each time of execution is iteration.
+
+
+JS Loops
+1. for Loops
+2. while Loops
+3. do-while Loop
+4. for .. of loop (arrays)
+5. for .. in loop (obj)
+
+1. for loop
+- we need know that it takes 3 expressions.
+
+for(initializ, condition, update){
+    result, or what to do
+}
