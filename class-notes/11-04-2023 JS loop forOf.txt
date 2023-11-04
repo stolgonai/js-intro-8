@@ -1,0 +1,7 @@
+for ... of loop
+-It is like syntatic sugar added to for loop
+-for ..of loop makes programmer code easier
+
+NOTE!
+-If you need to check each element and manipilate with the, better use for..of loop
+-if ypou need to check indexes or skip some elements, better use regular for loop

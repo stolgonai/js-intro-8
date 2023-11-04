@@ -5,6 +5,12 @@ Loops: used for repeated code in a block and make our code more readable overal.
 
 -Infinite is never stops. because logical mistake, break point is never met.
 
+-Loops are common concepts in any programming language and widely used.
+- It eliminate duplicated codes and allows programmer to run a block of code repeatedly
+-It saves time and effort for the programmer as well.
+
+
+
 Iteration: each time of execution is iteration.
 
 
