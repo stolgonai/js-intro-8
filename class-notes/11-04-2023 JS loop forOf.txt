@@ -5,3 +5,5 @@ for ... of loop
 NOTE!
 -If you need to check each element and manipilate with the, better use for..of loop
 -if ypou need to check indexes or skip some elements, better use regular for loop
+
+
