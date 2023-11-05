@@ -7,3 +7,12 @@ NOTE!
 -if ypou need to check indexes or skip some elements, better use regular for loop
 
 
+// NESTED loops
+-Any loop statmnt can be used in another one lopp.
+- Executing a loop inside another loop is known as a nested loop-
+- The first loop is outloop and inner loop for nested one
+
+
+Array forEach() higher order function: this is another way we can iterate through array element
+
+Function expression
