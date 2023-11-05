@@ -440,7 +440,7 @@ function getEvens(num1, num2) {
 
   // compare if two args are same and odd, dont go deep, return an empty arr and execute of the function
   if (num1 === num2 && num1 % 2 !== 0) return result;
-  if (num1 === num2 && num1 % 2 !== 0) return [num1];
+  // if (num1 === num2 && num1 % 2 === 0) return [num1];
 
   //We have to find which arg is max and min, to be able make range of even nums later
   const minArg = Math.min(num1, num2);
@@ -449,7 +449,8 @@ function getEvens(num1, num2) {
   // we compare odd and even, to find start point
   if (minArg % 2 !== 0) {
     for (let i = minArg + 1; i <= maxArg; i += 2) result.push(i);
-  } else {
+  }
+  if (minArg % 2 === 0) {
     for (let i = minArg; i <= maxArg; i += 2) result.push(i);
   }
   return result;
@@ -476,8 +477,72 @@ getMultipleOf5(5, 5) -> [ 5 ]
 getMultipleOf5(2, 4) -> [ ]
  */
 
-function getMultipleOf5(num1, num2) {}
+function getMultipleOf5(num1, num2) {
+  // create an empty array, to store result
+  let result = [];
+  // check if both args same and divisible by 5
+  if (num1 === num2 && num1 % 5 === 0) return [num1];
+
+  // check if both args less then 5
+  if (num1 < 5 && num2 < 5) return result;
+
+  // if num1 > num2 then incrementing loop
+  // loop over and find divisible by 5 nums in the range between minand max
+  if (num2 > num1) {
+    for (let i = num1; i <= num2; i++) {
+      if (i % 5 === 0) result.push(i);
+    }
+  }
+
+  //if arg1 > arg2 then decrementing loop
+  if (num1 > num2) {
+    for (let i = num1; i >= num2; i--) {
+      if (i % 5 === 0) result.push(i);
+    }
+  }
+  return result;
+}
 console.log(getMultipleOf5(3, 17)); // -> [ 5, 10, 15]
 console.log(getMultipleOf5(23, 5)); // -> [ 20, 15, 10, 5 ]
 console.log(getMultipleOf5(5, 5)); //-> [ 5 ]
 console.log(getMultipleOf5(2, 4)); // -> [ ]
+
+/**
+ * Task 20
+ * Write a function named as fizzBuzz() which takes 2 number arguments and 
+ returns a string composed with below requirements when invoked.
+•You need to find all the numbers within the range of given 2 numbers (both inclusive) and 
+store them in a string from smallest to greatest number with a ' | ' separator for each number.
+•You will need to convert numbers divisible by 3 to 'Fizz'
+•You will need to convert numbers divisible by 5 to 'Buzz'
+•You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz’
+•The rest will stay the same.
+NOTE: Make your code dynamic that works for any numbers.
+Assume you will not be given negative numbers.
+Examples:
+fizzBuzz(13, 18) -> "13 | 14 | FizzBuzz | 16 | 17 | Fizz" 
+fizzBuzz(12, 5) -> "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz"
+fizzBuzz(5, 5) -> "Buzz"fizzBuzz(9, 6) -> "Fizz | 7 | 8 | Fizz"
+ */
+
+function fizzBuzz(num1, num2) {
+  // create a result container, which is an array for now, it is easy to manipulate later.
+  let result = [];
+
+  // find max and min num to know where start range and end
+  let startMin = Math.min(num1, num2);
+  let endMax = Math.max(num1, num2);
+
+  //loop over with conditions in it: if divisible by 3, 5 and both 3 and 5
+  for (let i = startMin; i <= endMax; i++) {
+    if (i % 3 === 0 && i % 5 === 0) result.push("FizzBuzz");
+    else if (i % 3 === 0) result.push("Fizz");
+    else if (i % 5 === 0) result.push("Buzz");
+    else result.push(i);
+  }
+  return result.join(" | ");
+}
+console.log(fizzBuzz(13, 18)); // -> "13 | 14 | FizzBuzz | 16 | 17 | Fizz"
+console.log(fizzBuzz(12, 5)); // -> "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz"
+console.log(fizzBuzz(5, 5)); // -> "Buzz"
+console.log(fizzBuzz(9, 6)); // -> "Fizz | 7 | 8 | Fizz"
