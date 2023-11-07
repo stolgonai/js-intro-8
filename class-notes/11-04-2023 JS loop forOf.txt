@@ -16,3 +16,15 @@ NOTE!
 Array forEach() higher order function: this is another way we can iterate through array element
 
 Function expression
+
+
+JS OBJECTS:
+- It is reference data type,
+- Own syntax
+- it consyst of one or multiple key-value pairs;
+- each key-value pair is known as properties;
+- we can create objects using object literals {} or the object constructor
+            const obj1 = {};
+            const obj2 = new Object();
+-for in loop 
+
