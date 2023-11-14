@@ -22,3 +22,5 @@ REDUCE:
 arr.reduce((initial val, element, index){
 body of the function
 }, initial val)
+
+Includes can be replaced with indexOf("") >= 0
