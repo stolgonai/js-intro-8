@@ -1,0 +1,18 @@
+
+Functions:
+
+
+Function expression:
+another way to define functions in JS and we actually creating an anonymous function, this function can not be called be before declaring.
+
+Arrow functions: 
+
+
+
+Array methods
+forEach(callBackFunctions)
+map(callBackFunctions)
+filter(callBackFunctions)
+reduce(callBackFunctions)
+
+CallBack Functions:

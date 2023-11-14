@@ -16,3 +16,9 @@ Arrow function syntax:
 const functionName = ()=>body of function
 //Print each name
 names.forEach((callBackfu) => console.log(name));
+
+
+REDUCE:
+arr.reduce((initial val, element, index){
+body of the function
+}, initial val)
