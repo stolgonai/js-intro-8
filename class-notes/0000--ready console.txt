@@ -1,0 +1,18 @@
+console.log("\n--------------Print Each name Uppercased --------------");
+
+While syntax:
+while(condition){
+    do smth
+    and increment step i++
+}
+
+DO While
+
+
+TERNARY Operators:
+ num % 2 === 0 ? console.log(true) : console.log(false)
+
+Arrow function syntax:
+const functionName = ()=>body of function
+//Print each name
+names.forEach((callBackfu) => console.log(name));

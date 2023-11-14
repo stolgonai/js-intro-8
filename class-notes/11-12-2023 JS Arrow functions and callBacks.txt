@@ -1,13 +1,26 @@
 Write a function that print 'Hello"
 
-//Regular function syntax
+//Regular function syntax => Hoisted, can call before and after
 function printHello(){
     console.log("Hello")
 }
 
 
 //Function expression = storing function in the variable
+and it is NOT HOisted!
 const printHello = function(){console.log("Hello")}
 
-//Arrow function
+//Arrow function - not Hoisted
 const printHello = ()=>console.log("Hello")
+
+
+CALLBACK Function
+it is a function that used as an arg of another function
+for example forEach
+const names = ["John", "Jane", "Alex", "Max"];
+
+//Print each name
+names.forEach((name) => console.log(name));
+
+*** What are differences btwn
+- is map() vs filter() vs reduce() methods
