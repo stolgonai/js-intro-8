@@ -29,3 +29,8 @@ console.log(
 console.log(
   numbers.reduce((minNum, currNum) => Math.min(minNum, currNum), +Infinity)
 );
+
+const fruits = ["Apple", "Orange", "Kiwi", "Pineapple", "Mango", "Melon"];
+// count how many elements has 'apple' ignoring cases   -> 2
+// count how many elements has 'i' ignoring cases       -> 2
+// count how many elements ends with 'e'                -> 3
