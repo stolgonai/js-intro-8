@@ -284,6 +284,11 @@ function add(arr1, arr2) {
   // return the result
   return result;
 }
+// another option
+const add = (arr1, arr2) => {
+  if (arr2.length > arr1.length) [arr1, arr2] = [arr2, arr1];
+  return arr1.map((value, i) => value + (arr2[i] || 0));
+};
 
 console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2])); ///  -> [9, 3, 2, 7, 5, 10]
 console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])); /// -> [16, 11, 9,  3, 2, 7, 5, 10, 34]
@@ -346,6 +351,27 @@ function findClosestTo10(arr) {
     });
 }
 
+// another way
+const findClosestTo10 = (arr) => {
+  let closestTo10 = Number.MAX_VALUE;
+  let closestDiff = Number.MAX_VALUE;
+
+  for (currentNum of arr) {
+    if (currentNum === 10) continue;
+
+    let currentDiff = Math.abs(10 - currentNum);
+
+    if (
+      currentDiff < closestDiff ||
+      (currentDiff === closestDiff && currentNum < closestTo10)
+    ) {
+      closestTo10 = currentNum;
+      closestDiff = currentDiff;
+    }
+  }
+  return closestTo10;
+};
+
 console.log(findClosestTo10([10, 13, 7, 5, 70, 15, 57])); //  -> 5
 console.log(findClosestTo10([10, -13, 15, 70, 5, 57])); //  -> 5
 console.log(findClosestTo10([10, -13, 12, 8, 15, -20])); //  -> 8
@@ -393,6 +419,22 @@ function isEmailValid(str) {
   }
   return countSpecChar === 1 && isValid;
 }
+
+//another option
+const isEmailValid = (email) => {
+  if (email.includes(" ")) return false;
+  if (email.split("@").length !== 2) return false;
+
+  const beginning = email.split("@")[0];
+  const middle = email.split("@")[1].split(".")[0];
+  const end = email.split("@")[1].split(".")[1];
+
+  if (beginning === undefined || middle === undefined || end === undefined)
+    return false;
+
+  return beginning.length >= 2 && middle.length >= 2 && end.length >= 2;
+};
+
 console.log(isEmailValid("")); // -> false
 console.log(isEmailValid("@gmail.com")); //  -> false
 console.log(isEmailValid("johndoe@yahoo")); //  -> false
@@ -452,6 +494,26 @@ function isPasswordValid(str) {
     countLowerCase >= 1
   );
 }
+
+// another solution
+const isPasswordValid = (pass) => {
+  if (pass.includes(" ")) return false;
+  if (pass.length < 8 || pass.length > 16) return false;
+
+  let hasUppercase = false;
+  let hasLowercase = false;
+  let hasDigit = false;
+  let hasSpecial = false;
+
+  for (char of pass) {
+    if (char >= "A" && char <= "Z") hasUppercase = true;
+    else if (char >= "a" && char <= "z") hasLowercase = true;
+    else if (char >= "0" && char <= "9") hasDigit = true;
+    else hasSpecial = true;
+  }
+
+  return hasUppercase && hasLowercase && hasDigit && hasSpecial;
+};
 
 console.log(isPasswordValid("")); //  -> false
 console.log(isPasswordValid("abcd")); //  -> false
