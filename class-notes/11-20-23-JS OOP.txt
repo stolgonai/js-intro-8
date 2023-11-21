@@ -1,0 +1,8 @@
+
+OOP : Object Oriented Programming
+
+Is JS OOP?
+- Before ES6, JS was not providing the clases that enables OOP
+-After ES6, JS start to support oop well;
+
+Programmers still use JS without OOP.
