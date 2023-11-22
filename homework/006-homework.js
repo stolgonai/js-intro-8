@@ -285,16 +285,30 @@ element will always be more than the others.
  */
 const mostRepeated = (arr) => {
   if (arr.length === 1) return arr[0];
-  let result = {};
+  let tempObj = {};
+  let mostOccurEl = arr[0];
+  let countOccur = 1;
   for (const num of arr) {
-    if (result[num] === undefined) result[num] = 0;
-    result[num]++;
+    if (tempObj[num] === undefined) tempObj[num] = 0;
+    tempObj[num]++;
+    if (tempObj[num] > countOccur) {
+      countOccur = tempObj[num];
+      mostOccurEl = num;
+    }
   }
-  let maxVal = Object.values(result)[0];
-  console.log(Object.values(result));
-  let maxKey;
+  return mostOccurEl;
 
-  return maxKey;
+  // const key = Object.keys(tempObj);
+  // const val = Object.values(tempObj);
+  // let max = val[0];
+  // let result = key[0];
+  // for (let i = 0; i < val.length; i++) {
+  //   if (val[i] > max) {
+  //     max = val[i];
+  //     result = key[i];
+  //   }
+  // }
+  // return result;
 };
 console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23])); //  -> 4
 console.log(
