@@ -1,0 +1,11 @@
+
+
+ES6 Class GETTERS and SETTERS
+Getters: are used to get properties of an object
+Getters are mostly return type methods and usually they do not take argument unless necessary
+
+Setters: are used to set properties of an object
+Setters are mostly void type (not returning) and they mostly take arguments to be set as the new information
+
+ADVANTAGES OF GETTERS AND SETTERS
+-They provide programmer better control mechanism to access information and update information
