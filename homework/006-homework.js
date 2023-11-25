@@ -287,7 +287,7 @@ const mostRepeated = (arr) => {
   if (arr.length === 1) return arr[0];
   let tempObj = {};
   let mostOccurEl = arr[0];
-  let countOccur = 1;
+  let countOccur = 0;
   for (const num of arr) {
     if (tempObj[num] === undefined) tempObj[num] = 0;
     tempObj[num]++;
