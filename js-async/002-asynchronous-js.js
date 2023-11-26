@@ -2,7 +2,9 @@ function print1() {
   console.log("1");
 }
 function print2() {
-  console.log("2");
+  settimeout(() => {
+    console.log("2");
+  }, 5000);
 }
 function print3() {
   console.log(3);
