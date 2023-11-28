@@ -84,3 +84,34 @@ async function test() {
 }
 
 test();
+
+
+
+
+EROR -HANDLING
+Error:Unexpected result of a running program
+
+There are 2 types of errors:
+1. Syntax error: due to missspelling or typo in the code
+    sample: setTimeOut ==> setTimeout
+2. Runtime error: this type of error, happen due to a logical mistake by programmer or system issue may caused it    
+
+
+try-catch-finally block
+-We will use try for block of code that could possibly throw an error;
+-catch block is uesd to catch if any error happens in the try block and customize the error;
+catch block will be executed ONLY IF there is an EROR;
+-try block cann not be used alone, it requres either catch or finally or both.
+-catch or finally blocks cannot be used without try block.
+-finally block is always is executed in case of error or not;
+
+
+throw keyword:
+-this keyword is used to throw a custom error intentionally
+sample:
+function giveMePositiveNum(num){
+if(num > 0) console.log("Thanks! ", num)
+else throw new Error("Bad guy!! Give the positive num", 0)
+}
+
+
