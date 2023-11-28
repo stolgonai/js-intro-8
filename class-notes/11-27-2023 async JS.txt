@@ -1,0 +1,7 @@
+
+AJAX:
+
+Ways to handle asynch JS code:
+1.Callbacks;
+2. Promises;
+3. Async Await
