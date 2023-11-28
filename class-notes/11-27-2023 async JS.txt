@@ -5,3 +5,82 @@ Ways to handle asynch JS code:
 1.Callbacks;
 2. Promises;
 3. Async Await
+
+setTimeOut() function is used for hard pause for the code. So, we will stay away from it. Instead, we will 
+learn implicit wait which is used to wait until a condition happens or up to certain amount of time. 
+
+async key words isnused to define ana async function
+await key word is ised to wait for an event till it completed, then it coniues with the next event
+await keyword can ony be used with the func that returns PROMISE
+
+
+ before ES6                                     After ES6
+ Callbacks                          Promises                 Async-await
+ DO NOT used                        -70%                        -30%
+
+80 min party
+-got to Costco -> 20 min
+-get meats and vegies   -> 15 min
+-cook -> 30 min
+-serve -> 10 min
+-eat -> 5 min
+
+function goToCostco() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(carDoesNotBreak) resolve();
+            else reject();
+        }, 20000);
+    });
+}
+
+function getMeat() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(meatAvailable) resolve();
+            else reject();
+        }, 15000);
+    });
+}
+
+function cook() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(gasAvailable) resolve();
+            else reject();
+        }, 30000);
+    });
+}
+
+function serve() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(noIssues) resolve();
+            else reject();
+        }, 10000);
+    });
+}
+
+function eat() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(noProblem) resolve();
+            else reject();
+        }, 5000);
+    });
+}
+
+//
+async function test() {
+    try {
+        await goToCostco();
+        await getMeat();
+        await cook();
+        await serve();
+        await eat();
+    } catch(err) {
+        console.log(err);
+    }
+}
+
+test();
