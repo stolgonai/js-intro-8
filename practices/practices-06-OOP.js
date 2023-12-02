@@ -1,3 +1,15 @@
+/*
+Find how many students are male                             -> 3
+Find how many students are female                           -> 1
+Find how many students are taking the Math                  -> 3
+Find how many students are taking the Science               -> 1
+Find the oldest student                                     -> Alex Smith is oldest with the age of 30.
+Find the youngest student                                   -> Jane Doe is youngest with the age of 17. REDUCE
+Find the average age of the students                        -> 91/4 REDUCE
+Find and return the fullname of students who take Math      -> ['John Doe', 'Alex Smith', 'Jane Doe'] FILTER and MAP
+Find and return the fname of students who are male          -> ['John', 'Alex', 'James'] FILTER and MAP
+Find and return the lname of students who are older than 20 -> ['Doe', 'Smith' 'Morgan'] FILTER and MAP
+*/
 class Student {
   static numberOfStudents = 0;
   constructor(fName, lName, age, gender, className) {
@@ -38,8 +50,6 @@ const maleStud2 = students.reduce(
   (sum, s) => (s.gender === "M" ? sum + 1 : sum),
   0
 );
-// const youngestStudents;
-// const averageAge;
 let oldest = students[0];
 for (const s of students) {
   if (s.age > student1.age) oldest = s;
@@ -57,3 +67,25 @@ const youngestStud = students.reduce(
 // console.log(
 //   `${youngestStud.fName} ${youngestStud.lName} is an youngest with the age ${youngestStud.age}`
 // );
+
+const average =
+  students.reduce((sumOfAge, age) => {
+    return sumOfAge + age.age;
+  }, 0) / students.length;
+console.log(average, "average of students");
+
+const allMathStudents = students.reduce((result, stud) => {
+  if (stud.className === "Math") result.push(`${stud.fName} ${stud.lName}`);
+  return result;
+}, []);
+console.log("These are all Math students", allMathStudents);
+const allMaleStudents = students.reduce((result, stud) => {
+  if (stud.gender === "M") result.push(`${stud.fName} ${stud.lName}`);
+  return result;
+}, []);
+console.log("These are all male students", allMaleStudents);
+const studOlder20 = students.reduce((result, stud) => {
+  if (stud.age > 20) result.push(`${stud.lName}`);
+  return result;
+}, []);
+console.log("These are all students older 20", studOlder20);
