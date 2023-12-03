@@ -95,3 +95,38 @@ console.log(loginInfo.username);
 console.log(loginInfo.password);
 console.log(loginInfo.appURL);
 loginInfo.login();
+
+////////
+
+ES6 Modules
+-It is added a syntatic sugar on prev common js Modules
+-Common JS is supported with olders versions mostly with NODE
+-ES6 supported by new versions of Node and all the modern browsers
+
+    -export is used to exports reusable components from a file
+    -import ... from is used to import reusable components.
+
+fileDriver.js
+//properties
+const driverName = "chrome";
+
+//functions
+function quitDriver(){
+    //quitting driver
+}
+function getDriver(){
+    //getting driver
+}
+
+You can export a class as well
+
+
+Java - import
+c# - using
+JS - require
+JS new way - import
+
+
+what is default export?
+-default export 
+

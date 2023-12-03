@@ -46,11 +46,11 @@ function numberAndSquare(arr) {
   //   return result;
 }
 
-console.log(numberAndSquare([1, 2, 3])); //  -> [[1, 1], [2, 4], [3, 9]]
-console.log(numberAndSquare([0, 3, -6])); // -> [[0, 0], [3, 9], [-6, 36]]
-console.log(numberAndSquare([1, 4])); // -> [[1,1], [4, 16]]
-console.log(numberAndSquare([0, 0, 0])); //  -> [[0, 0], [0, 0], [0, 0]]
-console.log(numberAndSquare([0, 1, -10])); //  -> [[0, 0], [1, 1], [-10, 100]]) `
+// console.log(numberAndSquare([1, 2, 3])); //  -> [[1, 1], [2, 4], [3, 9]]
+// console.log(numberAndSquare([0, 3, -6])); // -> [[0, 0], [3, 9], [-6, 36]]
+// console.log(numberAndSquare([1, 4])); // -> [[1,1], [4, 16]]
+// console.log(numberAndSquare([0, 0, 0])); //  -> [[0, 0], [0, 0], [0, 0]]
+// console.log(numberAndSquare([0, 1, -10])); //  -> [[0, 0], [1, 1], [-10, 100]]) `
 
 /**
  * Write a function named containsValue() which takes a string array and a 
@@ -63,9 +63,9 @@ NOTE: The method is case-sensitive.
 function containsValue(arr, str) {
   return arr.some((word) => word === str);
 }
-console.log(containsValue(["abc", "foo", "javascript"], "hello")); // -> false
-console.log(containsValue(["abc", "def", "123"], "Abc")); //-> false
-console.log(containsValue(["abc", "def", "123", "Javascript", "Hello"], "123")); //-> true
+// console.log(containsValue(["abc", "foo", "javascript"], "hello")); // -> false
+// console.log(containsValue(["abc", "def", "123"], "Abc")); //-> false
+// console.log(containsValue(["abc", "def", "123", "Javascript", "Hello"], "123")); //-> true
 
 /**
  * Write a function named reverseSentence() which takes a string as argument 
@@ -82,6 +82,60 @@ const reverseSentence = (str) => {
   return upperCase + sliced;
 };
 
-console.log(reverseSentence("Hello")); // "There is not enough words!"
-console.log(reverseSentence("Javascript is fun")); // "Fun is javascript"
-console.log(reverseSentence("This is a sentence")); // "Sentence a is this"
+// console.log(reverseSentence("Hello")); // "There is not enough words!"
+// console.log(reverseSentence("Javascript is fun")); // "Fun is javascript"
+// console.log(reverseSentence("This is a sentence")); // "Sentence a is this"
+
+/**
+ * Write a function named removeStringSpecialsDigits() which takes a string 
+as argument and return a string without the special characters or digits.
+ */
+const removeStringSpecialsDigits = (str) => {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (
+      (str[i] >= "a" && str[i] <= "z") ||
+      str[i] === " " ||
+      (str[i] >= "A" && str[i] <= "Z")
+    )
+      result += str[i];
+  }
+  return result;
+};
+
+// console.log(removeStringSpecialsDigits("123Javascript #$%is fun")); // -> "Javascript is fun"
+// console.log(removeStringSpecialsDigits("Cypress")); //  -> "Cypress"
+// console.log(removeStringSpecialsDigits("Automation123#$%")); //  -> "Automation"
+
+/**
+ * Write a function named removeArraySpecialsDigits() which takes a string 
+array as argument and return back without the special characters or digits.
+ */
+const removeArraySpecialsDigits = (arr) => {
+  console.log("Second way of solution is bellow in the commented area:");
+  return arr.map((el) => {
+    let result = "";
+    for (let i = 0; i < el.length; i++) {
+      if (
+        (el[i] >= "a" && el[i] <= "z") ||
+        el[i] === " " ||
+        (el[i] >= "A" && el[i] <= "Z")
+      )
+        result += el[i];
+    }
+    return result;
+  });
+
+  // return el.split("").reduce((result, innerEl) => {
+  //   if (
+  //     (innerEl >= "a" && innerEl <= "z") ||
+  //     innerEl === " " ||
+  //     (innerEl >= "A" && innerEl <= "Z")
+  //   )
+  //     result += innerEl;
+  //   return result;
+  // }, "");
+};
+console.log(removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"])); //  -> ["Javascript", "is", "fun"]
+console.log(removeArraySpecialsDigits(["Cypress", "123$%", "###"])); //  -> ["Cypress", "", ""]
+console.log(removeArraySpecialsDigits(["Automation", "123#$%tool"])); // -> ["Automation", "tool"]
