@@ -18,6 +18,7 @@ Examples:
 
  */
 
+const noZero = (arr) => arr.filter((num) => num !== 0);
 // console.log(noZero([1])); //  -> [1]
 // console.log(noZero([1, 1, 10])); // -> [1, 1, 10]
 // console.log(noZero([0, 1, 10])); //  -> [1, 10]
@@ -31,7 +32,7 @@ Examples:
  */
 function numberAndSquare(arr) {
   return arr.reduce((result, num) => {
-    let innerArr = [num, num * num];
+    let innerArr = [num, num ** 2];
     result.push(innerArr);
     return result;
   }, []);
@@ -45,11 +46,11 @@ function numberAndSquare(arr) {
   //   return result;
 }
 
-// console.log(numberAndSquare([1, 2, 3])); //  -> [[1, 1], [2, 4], [3, 9]]
-// console.log(numberAndSquare([0, 3, -6])); // -> [[0, 0], [3, 9], [-6, 36]]
-// console.log(numberAndSquare([1, 4])); // -> [[1,1], [4, 16]]
-// console.log(numberAndSquare([0, 0, 0])); //  -> [[0, 0], [0, 0], [0, 0]]
-// console.log(numberAndSquare([0, 1, -10])); //  -> [[0, 0], [1, 1], [-10, 100]]) `
+console.log(numberAndSquare([1, 2, 3])); //  -> [[1, 1], [2, 4], [3, 9]]
+console.log(numberAndSquare([0, 3, -6])); // -> [[0, 0], [3, 9], [-6, 36]]
+console.log(numberAndSquare([1, 4])); // -> [[1,1], [4, 16]]
+console.log(numberAndSquare([0, 0, 0])); //  -> [[0, 0], [0, 0], [0, 0]]
+console.log(numberAndSquare([0, 1, -10])); //  -> [[0, 0], [1, 1], [-10, 100]]) `
 
 /**
  * Write a function named containsValue() which takes a string array and a 
@@ -65,3 +66,22 @@ function containsValue(arr, str) {
 console.log(containsValue(["abc", "foo", "javascript"], "hello")); // -> false
 console.log(containsValue(["abc", "def", "123"], "Abc")); //-> false
 console.log(containsValue(["abc", "def", "123", "Javascript", "Hello"], "123")); //-> true
+
+/**
+ * Write a function named reverseSentence() which takes a string as argument 
+and returns the words in reverse order.  If there is no enough words reverse, 
+return "There is not enough words!".
+Examples:
+ */
+const reverseSentence = (str) => {
+  const converted = str.toLowerCase().split(" ");
+  if (converted.length < 2) return "There is not enough words!";
+  let reversed = converted.reverse().join(" ");
+  let upperCase = reversed.charAt(0).toUpperCase();
+  let sliced = reversed.slice(1);
+  return upperCase + sliced;
+};
+
+console.log(reverseSentence("Hello")); // "There is not enough words!"
+console.log(reverseSentence("Javascript is fun")); // "Fun is javascript"
+console.log(reverseSentence("This is a sentence")); // "Sentence a is this"
