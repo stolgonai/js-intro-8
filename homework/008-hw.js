@@ -188,6 +188,7 @@ const noXInVariables = (arr) => {
   //   .split(" ")
   //   .filter((el) => el !== "");
 };
+
 console.log(noXInVariables(["abc", 123, "#$%"])); //  -> ["abc", 123, "#$%"]
 console.log(noXInVariables(["xyz", 123, "#$%"])); // -> ["yz", 123, "#$%"]
 console.log(noXInVariables(["x", 123, "#$%"])); // -> [123, "#$%"]
