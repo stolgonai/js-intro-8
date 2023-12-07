@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <style>
+      h1 {
+        color: green;
+      }
+      label {
+        padding: 10px;
+      }
+      .drowdown,
+      h1 {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="taskDropdown">
+      <h1>Selection From Dropdown</h1>
+      <form action="">
+        <label for="choose-color" placeholder="Color"
+          >Please select your favorite color</label
+        >
+        <div class="drowdown">
+          <select name="colors" id="">
+            <option value="color">Color</option>
+            <option value="color">Red</option>
+            <option value="color">Black</option>
+            <option value="color">Green</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <!-- TASK 3 Checkboxes -->
+    <div>
+      <h1>Single Selection Radio Box Form</h1>
+      <form action="">
+        <p>Please select the tools you know</label
+        >
+        <div>
+       <div>
+            <input type="checkbox" id="selenium" />
+            <label for="language">Selenium</label>
+       </div>
+       <div>
+            <input type="checkbox" id="appium" />
+            <label for="language">Appium</label>
+       </div>
+       <div>
+        <input type="checkbox" id="junit" />
+        <label for="language">JUnit</label>
+       </div>
+       <div>
+
+           <input type="checkbox" id="testng" />
+           <label for="language">TestNG</label>
+       </div>
+   
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
